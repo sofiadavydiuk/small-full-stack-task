@@ -35,10 +35,7 @@ function appendCalculations(data) {
 const server = http.createServer((req,res) => {
 
     res.writeHead(200, {'Content-Type': 'application/json'});
-    if (req.url === '/products') {
-        res.write('Product infornation!');
-        return res.end();
-    } else if (req.url === '/users') {
+    if (req.url === '/users') {
         let data = fs.readFileSync('users.json', {encoding: "UTF-8"});
         res.writeHead(200, {'Content-Type': 'application/json'});
         let newData = appendCalculations(data);

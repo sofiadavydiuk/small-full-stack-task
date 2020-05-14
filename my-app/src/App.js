@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import "./App.css";
-import Button from '@material-ui/core/Button';
-import ComplexGrid from "./ComplexGrid";
 
 export default class App extends React.Component {
     state = {
@@ -43,12 +41,9 @@ export default class App extends React.Component {
     }
 
     sortByDate = (userA, userB) => {
-
         let a = new Date(userA.joinDate.replace(' ',''));
         let b = new Date(userB.joinDate.replace(' ',''));
         return  a>b ? 1 : a<b ? -1 : 0;
-
-        // return this.state.isSorted ? user.ticketsCreated.length >= 5 : user.ticketsCreated.length < 5;
     }
 
 

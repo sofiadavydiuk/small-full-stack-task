@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0086143c-01e2-4dfd-9df5-52eaea467210" name="Default Changelist" comment="" />
+    <list default="true" id="0086143c-01e2-4dfd-9df5-52eaea467210" name="Default Changelist" comment="added project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/api/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/node/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/server/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/node/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/server/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/node/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/server/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/node/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/server/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/node/.idea/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/server/.idea/untitled.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/node/node.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/server/node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/node/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/server/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/ComplexGrid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/ListOfUsers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/logo.svg" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -33,10 +58,36 @@
       <updated>1589391883718</updated>
       <workItem from="1589391885068" duration="17000" />
       <workItem from="1589391938941" duration="5000" />
+      <workItem from="1589391953274" duration="740000" />
+      <workItem from="1589439641412" duration="7564000" />
     </task>
+    <task id="LOCAL-00001" summary="added project">
+      <created>1589392008525</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589392008525</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added project" />
+    <option name="LAST_COMMIT_MESSAGE" value="added project" />
   </component>
 </project>
