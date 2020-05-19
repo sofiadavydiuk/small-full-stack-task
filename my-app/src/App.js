@@ -5,18 +5,16 @@ import "./App.css";
 export default class App extends React.Component {
     state = {
         users: [],
-        originalUsers: [],
         calculations: {},
         isFiltered: false,
+        sortType: "newest",
     }
 
     componentDidMount() {
-        let users = '';
         axios.get(`/users`)
             .then(res => {
             this.setState({
                 users: res.data.users,
-                originalUsers: res.data.users,
                 calculations: res.data.calculations
             });
         })
@@ -29,13 +27,6 @@ export default class App extends React.Component {
         })
     }
 
-    handleSortChange = (e) => {
-        console.log(e.target);
-        this.setState({
-            isSorted: e.target.checked,
-        })
-    }
-
     filterTickets = (user) => {
         return this.state.isFiltered ? user.ticketsCreated.length >= 5 : user.ticketsCreated.length < 5;
     }
@@ -43,37 +34,52 @@ export default class App extends React.Component {
     sortByDate = (userA, userB) => {
         let a = new Date(userA.joinDate.replace(' ',''));
         let b = new Date(userB.joinDate.replace(' ',''));
-        return  a>b ? 1 : a<b ? -1 : 0;
-    }
 
-
-    render() {
-        if (this.state.isSorted) {
-            this.state.users.sort(this.sortByDate);
+        if(this.state.sortType === "newest") {
+            console.log([a,b, a>b ? -1 : a<b ? 1 : 0])
+            return  a>b ? -1 : a<b ? 1 : 0;
+        }
+        else {
+            return  a>b ? 1 : a<b ? -1 : 0;
         }
 
+    }
+
+    onSort = sortType => {
+        this.setState({sortType})
+    }
+
+    render() {
         return (
             <div className="App">
-                <div className="checkboxes">
-                    <input type="checkbox" id="sortByDate"  value={this.state.isSorted} onChange={this.handleSortChange}/>
-                    <label htmlFor="sortByDate">Sort by date</label><br/>
-
-                   <input type="checkbox" id="filterby5" name="vehicle1" value={this.state.isFiltered} onChange={this.handleFilterChange}/>
-                   <label htmlFor="filterby5">More then 5 tickets created</label><br/>
+                <h1 className="heading">Full Stack Task</h1>
+                <div className="top-section">
+                    <div>
+                        <button className="buttonSort" onClick={() => this.onSort("newest")}>Sort By Newest</button>
+                        <button className="buttonSort" onClick={() => this.onSort("oldest")}>Sort By Oldest</button>
+                    </div>
+                    <div className="checkboxes">
+                        <label className="checkboxContainer" htmlFor="filterby5">
+                           <input type="checkbox" id="filterby5" name="vehicle1" value={this.state.isFiltered} onChange={this.handleFilterChange}/>
+                           More then 5 tickets created
+                          <span className="checkmark"></span>
+                        </label>
+                    </div>
                 </div>
-                <div className="grid">
-                    {this.state.users.filter(this.filterTickets).map((user) =>
-                        <ul key={user.id}>
-                            <div>{user.name}</div>
-                            <div>{user.company}</div>
-                            <div>{user.email}</div>
-                            <div>{user.joinDate}</div>
-                        </ul>
+                <div className="flex-grid">
+                    {this.state.users.sort(this.sortByDate).filter(this.filterTickets).map((user) =>
+                        <div className="col card" key={user.id}>
+                            <div className="title"><span className="cardFieldDescription">User Name:</span> {user.name}</div>
+                            <div className="userCompany"><span className="cardFieldDescription">Company:</span> {user.company}</div>
+                            <div className="userEmail"><span className="cardFieldDescription">Email:</span> {user.email}</div>
+                            <div className="userData"><span className="cardFieldDescription">Join date:</span> {user.joinDate}</div>
+                        </div>
                     )}
                 </div>
                  <div className="calculation">
-                    <li>{this.state.calculations.averageTicketCreated}</li>
-                    <li>{this.state.calculations.averageBackupsCreated}</li>
+                     <h2>Statistics</h2>
+                    <li><span className="cardFieldDescription">Average Ticket Created:</span>{this.state.calculations.averageTicketCreated}</li>
+                    <li><span className="cardFieldDescription">Average Backups Created:</span>{this.state.calculations.averageBackupsCreated}</li>
                  </div>
             </div>
         )

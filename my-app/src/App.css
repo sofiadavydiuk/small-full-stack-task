@@ -1,7 +1,203 @@
-.grid {
+body {
+  color: #7a7c7f;
+  font-size: 29px;
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+}
+
+/*Grid*/
+
+.flex-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: left;
+  font-size: 22px;
 }
-.grid-item {
 
+.col {
+  width: 25%;
+  margin: 25px 5px;
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 10%;
+}
+
+@media (max-width: 400px) {
+  .flex-grid {
+    display: block;
+  }
+}
+
+/*Buttons*/
+
+.buttonSort {
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px 32px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+  margin: 10px;
+}
+
+.buttonSort:hover {
+  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  background-color: #408c99;
+}
+
+.buttonSort:active {
+  position: relative;
+  top: 1px;
+}
+
+.buttonSort:focus {
+  outline: 0;
+}
+
+
+/*Checkbox*/
+
+.checkboxContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+/* Create a custom checkbox */
+
+.checkmark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.checkboxContainer:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.checkboxContainer input:checked~.checkmark {
+  background-color: #2196F3;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+/* Show the checkmark when checked */
+
+.checkboxContainer input:checked~.checkmark:after {
+  display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.checkboxContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/*heading*/
+
+.heading {
+  color: #d54d7b;
+  font-family: "Great Vibes", cursive;
+  font-size: 165px;
+  line-height: 160px;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 40px;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+}
+
+
+/*Cards*/
+
+.card {
+  border-radius: 4px;
+  background-color: #f8dde1;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, .12);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.userName {
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: .0125em;
+  text-decoration: inherit;
+  text-transform: inherit;
+}
+
+.userCompany {
+  text-transform: none;
+}
+
+.cardFieldDescription {
+  font-weight: bold;
+}
+
+.calculation {
+  margin: 30px 6%;
+  list-style-type: none;
+  text-align: left;
 }
